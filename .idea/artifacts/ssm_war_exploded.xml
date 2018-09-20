@@ -19,13 +19,6 @@
           <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:3.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.5" />
-          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.3.0" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-orm:3.2.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.2.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.5.RELEASE" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
-          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jdbc:8.0.28" />
-          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:8.0.28" />
           <element id="library" level="project" name="Maven: org.mybatis.generator:mybatis-generator-maven-plugin:1.3.5" />
           <element id="library" level="project" name="Maven: org.apache.maven:maven-plugin-api:3.3.9" />
           <element id="library" level="project" name="Maven: org.apache.maven:maven-model:3.3.9" />
@@ -40,6 +33,13 @@
           <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-component-annotations:1.5.5" />
           <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-classworlds:2.5.2" />
           <element id="library" level="project" name="Maven: org.mybatis.generator:mybatis-generator-core:1.3.5" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.3.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-orm:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jdbc:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:8.0.28" />
         </element>
       </element>
       <element id="directory" name="META-INF">
