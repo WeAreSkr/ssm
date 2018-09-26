@@ -1,7 +1,10 @@
 package cap.controller;
 
+import cap.model.Profile;
 import cap.model.User;
+import cap.model.bridge.ProfileAndUser;
 import cap.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,11 +47,13 @@ public class UserController {
     public String login(Model model, User user, HttpServletRequest request, HttpServletResponse response) {
         User u = userService.login(user);
         if(u == null) {
-            model.addAttribute("errMsg","登录失败");
+            if(model != null)
+                model.addAttribute("errMsg","登录失败");
             return "login";
         }else {
             request.getSession().setAttribute("user",u);
-            model.addAttribute("sucMsg","登录成功");
+            if(model != null)
+                model.addAttribute("sucMsg","登录成功");
             try {
                 response.sendRedirect("index.jsp");
             } catch (IOException e) {
@@ -66,4 +71,28 @@ public class UserController {
             e.printStackTrace();
         }
     }
+
+    @RequestMapping(value = "/profile",method = RequestMethod.GET)
+    public String profile(Model model,HttpServletRequest request, HttpServletResponse response) {
+        return "profile";
+    }
+
+    @RequestMapping(value = "/prfile",method = RequestMethod.POST)
+    public String updateProfile(Profile profile, User user, ProfileAndUser profileAndUser,HttpServletRequest request, HttpServletResponse response){
+
+        profile.setUserId(profileAndUser.getpId());
+        user.setId(profileAndUser.getuId());
+
+        if(user.getProfile() == null) {
+            profile.setUserId(user.getId());
+            userService.insertProfile(profile);
+            login(null,user,request,response);
+        }else {
+            profile.setUserId(user.getId());
+            userService.updateProfile(profile);
+            login(null,user,request,response);
+        }
+        return "index";
+    }
+
 }

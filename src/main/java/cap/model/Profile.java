@@ -198,4 +198,16 @@ public class Profile {
     public void setTelephone(String telephone) {
         this.telephone = telephone == null ? null : telephone.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Profile{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gender=" + gender +
+                ", telephone='" + telephone + '\'' +
+                '}';
+    }
 }

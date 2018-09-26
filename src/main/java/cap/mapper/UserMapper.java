@@ -1,6 +1,7 @@
 package cap.mapper;
 
 import cap.model.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
 
@@ -20,5 +21,5 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    User selectByUsername(String username);
+    User selectByUsername(@Param("username") String username);
 }
