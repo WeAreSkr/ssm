@@ -77,7 +77,7 @@ public class UserController {
         return "profile";
     }
 
-    @RequestMapping(value = "/prfile",method = RequestMethod.POST)
+    @RequestMapping(value = "/profile",method = RequestMethod.POST)
     public String updateProfile(Profile profile, User user, ProfileAndUser profileAndUser,HttpServletRequest request, HttpServletResponse response){
 
         profile.setUserId(profileAndUser.getpId());
