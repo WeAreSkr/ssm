@@ -2,6 +2,9 @@ package cap.mapper;
 
 import cap.model.Article;
 import cap.model.ArticleWithBLOBs;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface ArticleMapper {
     /**
@@ -59,4 +62,11 @@ public interface ArticleMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(Article record);
+
+
+
+
+    public List<ArticleWithBLOBs> findPage(@Param("start")Integer start, @Param("pageSize") Integer pageSize);
+    public Integer getAllTotals();
+
 }

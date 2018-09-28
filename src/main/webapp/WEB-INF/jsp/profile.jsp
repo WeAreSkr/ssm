@@ -105,7 +105,7 @@
 	    </ul>
 	    <div id="myTabContent" class="tab-content">
 	      <div class="tab-pane active in" id="home">
-	        <form class="form-horizontal" name="profile_form" role="form" id="tab" action="/profile" method="post" onsubmit="return isValidate(profile_form)">
+	        <form class="form-horizontal" name="profile_form" role="form" id="tab" action="/user/profile" method="post" onsubmit="return isValidate(profile_form)">
 	           
 	            <div class="form-group">
 	            <label for="username">用户名</label>

@@ -34,7 +34,7 @@
 
 	<div class="container">
 		<div class="row col-md-6">
-			<form name="login_form" role="form" action="login" method="POST" onsubmit="return isValidate(login_form)">
+			<form name="login_form" role="form" action="/user/login" method="POST" onsubmit="return isValidate(login_form)">
 				<fieldset>
 					<div id="legend">
 						<legend class="caption">登录</legend>

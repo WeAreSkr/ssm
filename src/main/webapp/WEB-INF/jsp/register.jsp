@@ -34,7 +34,7 @@
 	<div class="container ">
 		<div class="row col-md-6">
 			<form class="form-horizontal" name="register_form"
-				action="register" method="POST"
+				action="/user/register" method="POST"
 				onsubmit="return isValidate(register_form)">
 				<fieldset>
 					<div id="legend form-group">

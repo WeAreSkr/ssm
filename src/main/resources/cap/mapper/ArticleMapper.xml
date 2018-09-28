@@ -224,4 +224,19 @@
       count = #{count,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="findPage"  resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    limit #{start,jdbcType=INTEGER}, #{pageSize,jdbcType=INTEGER}
+  </select>
+
+  <select id="getAllTotals"  resultType="java.lang.Integer">
+    select
+    COUNT(*)
+    from article
+  </select>
 </mapper>

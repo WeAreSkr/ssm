@@ -4,7 +4,6 @@ import cap.model.Profile;
 import cap.model.User;
 import cap.model.bridge.ProfileAndUser;
 import cap.service.UserService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
     @Resource
     private UserService userService;
@@ -49,13 +48,13 @@ public class UserController {
         if(u == null) {
             if(model != null)
                 model.addAttribute("errMsg","登录失败");
-            return "login";
+            return "/user/login";
         }else {
             request.getSession().setAttribute("user",u);
             if(model != null)
                 model.addAttribute("sucMsg","登录成功");
             try {
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("/index");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -66,7 +65,7 @@ public class UserController {
     public void logout(HttpServletRequest request,HttpServletResponse response) {
         request.getSession().removeAttribute("user");
         try {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("/index");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -92,7 +91,7 @@ public class UserController {
             userService.updateProfile(profile);
             login(null,user,request,response);
         }
-        return "index";
+        return "/index";
     }
 
 }

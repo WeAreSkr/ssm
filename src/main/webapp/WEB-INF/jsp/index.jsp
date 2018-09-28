@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 User u = (User)request.getSession().getAttribute("user");
 %>
 
-<jsp:include page="frame/Header.jsp"></jsp:include>
+<jsp:include page="/frame/Header.jsp"></jsp:include>
 
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -57,9 +57,9 @@ User u = (User)request.getSession().getAttribute("user");
 				}
 				<c:if test="${user==null}">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login" target="_blank">登录</a>
+					<li><a href="/user/login" target="_blank">登录</a>
 					</li>
-					<li><a href="/register" target="_blank">注册</a>
+					<li><a href="/user/register" target="_blank">注册</a>
 					</li>
 				</ul>
 				</c:if>
@@ -71,13 +71,13 @@ User u = (User)request.getSession().getAttribute("user");
 
 							<ul class="dropdown-menu">
 								<li><a
-									href="user/profile?userId="><i
+									href="/user/profile?userId="><i
 										class="glyphicon glyphicon-cog"></i> 编辑个人信息</a>
 								</li>
 
 								<li class="divider"></li>
 								<li><a
-									href="user/bloginfo?userId="><i
+									href="/user/bloginfo?userId="><i
 										class="glyphicon glyphicon-cog"></i> 编辑博客信息</a>
 								</li>
 
@@ -108,25 +108,23 @@ User u = (User)request.getSession().getAttribute("user");
 				<br>
 
 
-
+ <c:forEach items="${pageBean.list}" varStatus="index" var="article">
 				<h3>
 					<a
 						href="comment/post?artId=&userId="
-						target="_blank"></a>
+						target="_blank"> ${article.title}</a>
 				</h3>
 				<p>
 					<i class="glyphicon glyphicon-user"></i> <a
 						href="user/myblog?userId="
-						target="_blank"></a>
-					
-
+						target="_blank">
+					${article.summary}
+				</a>
 					| <i class="glyphicon glyphicon-calendar"></i>
 
-					| 阅读
-
-					次
+					| 阅读 ${article.count}次
 				</p>
-
+ </c:forEach>
 				<p></p>
 				<br> <a class="btn btn-primary"
 					href="comment/post?artId=">Read
@@ -140,12 +138,12 @@ User u = (User)request.getSession().getAttribute("user");
 				<ul class="pager">
 
 					<li class="previous"><a
-						href="user/index?curPage=">&larr;
+						href="index?pageno=${pageBean.previousPageNo}&pagesize=5">&larr;
 							上一页</a>
 					</li>
 
 					<li class="next"><a
-						href="user/index?curPage=">下一页
+						href="index?pageno=${pageBean.nextPageNo}&pagesize=5">下一页
 							&rarr;</a>
 					</li>
 				
@@ -230,4 +228,4 @@ User u = (User)request.getSession().getAttribute("user");
 	</div>
 	<!-- /.container -->
 
-	<jsp:include page="frame/Footer.jsp"/>
+	<jsp:include page="/frame/Footer.jsp"/>

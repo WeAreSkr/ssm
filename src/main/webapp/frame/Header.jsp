@@ -15,8 +15,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>JSP Blog</title>
 
 
-   	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-   	<link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+   	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+   	<link href="/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
 
 	
     
