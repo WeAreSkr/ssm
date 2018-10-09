@@ -7,17 +7,16 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
      <div class="container">
        <div class="navbar-header">
-         <a class="navbar-brand" href="index">SSH2博客</a>
+         <a class="navbar-brand" href="/index">SSM博客</a>
        </div>
 
        <div class="collapse navbar-collapse navbar-ex1-collapse">
          <ul class="nav navbar-nav">
-           <li><a href="index">网站首页</a></li>
+           <li><a href="/index">网站首页</a></li>
          </ul>
        
          <ul class="nav navbar-nav navbar-right">
-         	<li><a href="login.jsp" target="_blank">登录</a></li>
-         	<li><a href="Register.jsp" target="_blank">注册</a></li>
+         	<li><a href="/user/register" target="_blank">注册</a></li>
          </ul>        
        </div>
      </div>

@@ -14,8 +14,7 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp" target="_blank">登录</a></li>
-					<li><a href="register.jsp" target="_blank">注册</a></li>
+					<li><a href="/user/login" target="_blank">登录</a></li>
 				</ul>
 			</div>			
 		</div>		

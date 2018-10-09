@@ -147,4 +147,15 @@
       blog_name = #{blogName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+  <select id="selectByUserId" resultMap="ResultMapWithBLOBs">
+
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from blog_info
+    where user_id=#{userId,jdbcType=INTEGER}
+  </select>
 </mapper>

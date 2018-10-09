@@ -67,6 +67,7 @@ public interface ArticleMapper {
 
 
     public List<ArticleWithBLOBs> findPage(@Param("start")Integer start, @Param("pageSize") Integer pageSize);
+    public List<ArticleWithBLOBs> findPageByUserId(@Param("userId")Integer userId,@Param("start")Integer start, @Param("pageSize") Integer pageSize);
     public Integer getAllTotals();
-
+    public Integer getTotalsByUserId(@Param("userId") Integer userId);
 }

@@ -27,8 +27,13 @@ User u = (User)request.getSession().getAttribute("user");
 
 
 				<ul class="nav navbar-nav">
-					<li><a
-						href="user/myblog?userId=">我的博客</a>
+					<li>
+                        <c:if test="${user==null}">
+                            <a href="/user/login">我的博客</a>
+                        </c:if>
+                        <c:if test="${user!=null}">
+                        <a href="/myblog?userId=${user.id}">我的博客</a>
+                        </c:if>
 					</li>
 				</ul>
 
@@ -154,17 +159,12 @@ User u = (User)request.getSession().getAttribute("user");
 
 			<div class="col-lg-4">
 
-				<div class="well" align="center">
-					<a class="btn btn-primary" href="ApplyBlog.jsp"
-						target="_blank">申请个人博客</a>
-				</div>
-
-
+            <c:if test="${user != null}">
 				<div class="well" align="center">
 					<a class="btn btn-primary"
-						href="user/myblog?userId=">进入我的博客</a>
+						href="/myblog?userId=${user.id}">进入我的博客</a>
 				</div>
-
+                </c:if>
 
 				<div class="well">
 					<h4>搜索站内文章</h4>

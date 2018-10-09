@@ -239,4 +239,21 @@
     COUNT(*)
     from article
   </select>
+
+  <select id="findPageByUserId"  resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    WHERE user_id = #{userId,jdbcType=INTEGER}
+    limit #{start,jdbcType=INTEGER}, #{pageSize,jdbcType=INTEGER}
+  </select>
+
+  <select id="getTotalsByUserId"  resultType="java.lang.Integer">
+    select
+    COUNT(*)
+    from article
+    WHERE  user_id = #{userId,jdbcType=INTEGER}
+  </select>
 </mapper>
