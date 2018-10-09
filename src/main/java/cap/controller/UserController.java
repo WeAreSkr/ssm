@@ -94,6 +94,7 @@ public class UserController {
             login(null,user,request,response);
         }
         return "/index";
+<<<<<<< HEAD
     }
     @RequestMapping(value = "/updatepass",method = RequestMethod.POST)
     public String updatepass(Model model,
@@ -115,6 +116,8 @@ public class UserController {
         }
         return "profile";
 
+=======
+>>>>>>> 00ab4c4... 主页分页显示
     }
 
 }

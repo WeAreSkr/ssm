@@ -62,7 +62,11 @@ User u = (User)request.getSession().getAttribute("user");
 				}
 				<c:if test="${user==null}">
 				<ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD:src/main/webapp/WEB-INF/jsp/index.jsp
 					<li><a href="/user/login" >登录</a>
+=======
+					<li><a href="/user/login" target="_blank">登录</a>
+>>>>>>> 00ab4c4... 主页分页显示:src/main/webapp/WEB-INF/jsp/index.jsp
 					</li>
 					<li><a href="/user/register" target="_blank">注册</a>
 					</li>

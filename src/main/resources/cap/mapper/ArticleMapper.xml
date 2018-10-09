@@ -239,6 +239,7 @@
     COUNT(*)
     from article
   </select>
+<<<<<<< HEAD
 
   <select id="findPageByUserId"  resultMap="ResultMapWithBLOBs">
     select
@@ -256,4 +257,6 @@
     from article
     WHERE  user_id = #{userId,jdbcType=INTEGER}
   </select>
+=======
+>>>>>>> 00ab4c4... 主页分页显示
 </mapper>

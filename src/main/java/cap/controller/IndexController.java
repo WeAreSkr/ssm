@@ -1,5 +1,10 @@
 package cap.controller;
 
+<<<<<<< HEAD
+=======
+import cap.mapper.ArticleMapper;
+import cap.model.Article;
+>>>>>>> 00ab4c4... 主页分页显示
 import cap.service.ArticleService;
 import cap.util.PageBean;
 import org.springframework.stereotype.Controller;
@@ -18,6 +23,10 @@ public class IndexController {
     ArticleService articleService;
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 00ab4c4... 主页分页显示
     @RequestMapping(value = "index",method = RequestMethod.GET)
     public String index(Model model,
                         @RequestParam(value = "pageno",required = false) Integer pageNo,
