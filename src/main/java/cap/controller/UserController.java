@@ -8,11 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
@@ -92,6 +94,27 @@ public class UserController {
             login(null,user,request,response);
         }
         return "/index";
+    }
+    @RequestMapping(value = "/updatepass",method = RequestMethod.POST)
+    public String updatepass(Model model,
+                             @RequestParam("password") String password ,
+                             @RequestParam("newpassword") String newpassword,
+                             @RequestParam("userid")Integer userId){
+        User u1=userService.getUserById(userId);
+        if(u1 !=null && u1.getPassword().equals(password)){
+
+                int res=userService.updatePwdById(userId, newpassword);
+                if (res > 0) {
+                    model.addAttribute("succUpdateMsg", "修改密码成功！");
+                } else {
+                    model.addAttribute("errorUpdateMsg", "修改密码失败！");
+                }
+        }else
+        {
+           model.addAttribute("validPwdMsg", "旧密码验证失败，请重新填写！");
+        }
+        return "profile";
+
     }
 
 }

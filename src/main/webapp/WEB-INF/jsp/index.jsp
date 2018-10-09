@@ -57,7 +57,7 @@ User u = (User)request.getSession().getAttribute("user");
 				}
 				<c:if test="${user==null}">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/user/login" target="_blank">登录</a>
+					<li><a href="/user/login" >登录</a>
 					</li>
 					<li><a href="/user/register" target="_blank">注册</a>
 					</li>
@@ -82,7 +82,7 @@ User u = (User)request.getSession().getAttribute("user");
 								</li>
 
 								<li class="divider"></li>
-								<li><a href="logout"><i
+								<li><a href="/user/logout"><i
 										class="glyphicon glyphicon-off"></i> 登出</a>
 								</li>
 							</ul>

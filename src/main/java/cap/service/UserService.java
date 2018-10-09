@@ -48,4 +48,13 @@ public class UserService {
             return null;
         }
     }
+    public int updatePwdById(Integer id,String pwd) {
+        User u = new User();
+        u.setId(id);
+        u.setPassword(pwd);
+        return userMapper.updateByPrimaryKeySelective(u);
+    }
+    public User getUserById(Integer id){
+        return userMapper.selectByPrimaryKey(id);
+    }
 }

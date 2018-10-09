@@ -7,16 +7,16 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">         
-         <a class="navbar-brand" href="index">SSH2博客</a>
+         <a class="navbar-brand" href="index">SS博客</a>
         </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index">网站首页</a></li>
+            <li><a href="/index">网站首页</a></li>
           </ul>
-
+M
           <ul class="nav navbar-nav">
-            <li><a href="user/myblog?userId=">我的博客</a></li>
+            <li><a href="/user/myblog?userId=">我的博客</a></li>
           </ul>
           
           <ul class="nav navbar-nav">
@@ -41,13 +41,13 @@
                 <ul class="nav pull-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">欢迎， <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="user/profile?userId="><i class="glyphicon glyphicon-cog"></i> 编辑个人信息</a></li>
+                            <li><a href="/user/profile?userId="><i class="glyphicon glyphicon-cog"></i> 编辑个人信息</a></li>
 
                             <li class="divider"></li>
-                            <li><a href="user/bloginfo?userId="><i class="glyphicon glyphicon-cog"></i> 编辑博客信息</a></li>
+                            <li><a href="/user/bloginfo?userId="><i class="glyphicon glyphicon-cog"></i> 编辑博客信息</a></li>
 
                             <li class="divider"></li>
-                            <li><a href="logout"><i class="glyphicon glyphicon-off"></i> 登出</a></li>
+                            <li><a href="/user/logout"><i class="glyphicon glyphicon-off"></i> 登出</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -152,18 +152,19 @@
 	      </div>
 	      <div class="tab-pane fade" id="profile">
 	    	<form class="form-horizontal" id="tab2" name="pwd" onsubmit="return isPasswordValidate(updatePwd)"
-	    	      method="post" action="user/updatepass?userId= ">
+	    	      method="post" action="/user/updatepass">
+				<input type="hidden" name="userid" value="${user.id}">
 	        	<div class="form-group">
 	        	<label for="old_pwd">旧密码</label>
-	        	<input class="form-control" type="password" name="u.password" >
+	        	<input id="old_pwd" class="form-control" type="password" name="password" >
 	        	</div>
 	        	<div class="form-group">
 	        	<label for="new_pwd" >新密码</label>
-	        	<input class="form-control" type="password" name="u.newpassword1" >
+	        	<input id="new_pwd" class="form-control" type="password" name="newpassword" >
 	        	</div>
 	        	<div class="form-group">
 	        	<label for="submit_new_pwd">新密码（确认）</label>
-	        	<input class="form-control" type="password" name="u.newpassword2">
+	        	<input id="submit_new_pwd" class="form-control" type="password" name="newpassword2">
 	        	</div>
 	        	<div class="form-group">
 	        	   <button class="btn btn-primary">保存</button>

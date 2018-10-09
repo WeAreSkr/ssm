@@ -1,7 +1,5 @@
 package cap.controller;
 
-import cap.mapper.ArticleMapper;
-import cap.model.Article;
 import cap.service.ArticleService;
 import cap.util.PageBean;
 import org.springframework.stereotype.Controller;
