@@ -18,7 +18,6 @@ public class IndexController {
     ArticleService articleService;
 
 
-
     @RequestMapping(value = "index",method = RequestMethod.GET)
     public String index(Model model,
                         @RequestParam(value = "pageno",required = false) Integer pageNo,

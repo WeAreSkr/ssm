@@ -30,13 +30,14 @@ M
                 </ul>
             </li>
           </ul>
-
+<c:if test="${user!=null}">
 
           <ul class="nav navbar-nav navbar-right">
           	<li><a href="Login.jsp" target="_blank">登录</a></li>
           	<li><a href="Register.jsp" target="_blank">注册</a></li>
           </ul>
-
+</c:if>
+			<c:if test="${user!=null}">
           <div class="pull-right">
                 <ul class="nav pull-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">欢迎， <b class="caret"></b></a>
@@ -52,7 +53,7 @@ M
                     </li>
                 </ul>
           </div>
-
+			</c:if>
           
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
