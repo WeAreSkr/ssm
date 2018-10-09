@@ -50,7 +50,7 @@ public class UserController {
         if(u == null) {
             if(model != null)
                 model.addAttribute("errMsg","登录失败");
-            return "/user/login";
+            return "login";
         }else {
             request.getSession().setAttribute("user",u);
             if(model != null)
@@ -94,7 +94,7 @@ public class UserController {
             login(null,user,request,response);
         }
         return "/index";
-<<<<<<< HEAD
+
     }
     @RequestMapping(value = "/updatepass",method = RequestMethod.POST)
     public String updatepass(Model model,
@@ -116,8 +116,6 @@ public class UserController {
         }
         return "profile";
 
-=======
->>>>>>> 00ab4c4... 主页分页显示
     }
 
 }
